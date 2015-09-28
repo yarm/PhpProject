@@ -10,9 +10,7 @@ $login = $_REQUEST['login'];
 $password = $_REQUEST['password'];
 $res = mysql_query('SELECT id FROM user
 WHERE login="'.$login.'" AND password="'.$password.'"');
-if (!$res) {
-die(mysql_error());
-}
+
 list($user_id) = mysql_fetch_array($res);
 //var_dump($user_id);
 session_start();
