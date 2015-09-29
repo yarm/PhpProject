@@ -8,14 +8,18 @@ mysql_select_db('test') or die('BD not selected');
 
 $login = $_REQUEST['login'];
 $password = $_REQUEST['password'];
-$res = mysql_query('SELECT id FROM user
-WHERE login="'.$login.'" AND password="'.$password.'"');
-
+$res = mysql_query('SELECT id FROM user WHERE login="'.$login.'" AND password="'.$password.'"');
+var_dump('SELECT id FROM user WHERE login="'.$login.'" AND password="'.$password.'"');
 list($user_id) = mysql_fetch_array($res);
-//var_dump($user_id);
+
+ 
 session_start();
 $_SESSION['authorized'] = isset($user_id);
+if ($_SESSION) var_dump ($_SESSION);
          mysql_close($link);
+
+         //login=2" UNION SELECT password AS id FROM user WHERE 1 OR "1
+         
 
 /*$login = mysql_real_escape_string($_POST['login']);
 $password = mysql_real_escape_string($_POST['password']);
