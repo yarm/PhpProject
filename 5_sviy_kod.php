@@ -1,6 +1,3 @@
 <?php
-$a='< ?php $a=%c%s%c; printf($a,39,$a,39)?>';
-printf($a,39,$a,39);
+printf($a='< ?php printf($a=%c%s%c,39,$a,39);?>',39,$a,39);
 ?>
-
-

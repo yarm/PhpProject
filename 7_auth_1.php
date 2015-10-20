@@ -12,14 +12,19 @@ $res = mysql_query('SELECT id FROM user WHERE login="'.$login.'" AND password="'
 var_dump('SELECT id FROM user WHERE login="'.$login.'" AND password="'.$password.'"');
 list($user_id) = mysql_fetch_array($res);
 $resolt=mysql_fetch_array($res);
-var_dump($resolt);
+echo '</br>';
+echo '<pre>';
+print_r($resolt);
+echo '</pre>';
+
 session_start();
 $_SESSION['authorized'] = isset($user_id);
 
-if ($_SESSION) var_dump ($_SESSION);
+print_r($_SESSION);
          mysql_close($link);
 
          //login=2" UNION SELECT password AS id FROM user WHERE 1 OR "1
+		 //OR 1<>
          //працює навіть без використання логіна,фактично не потрібен ні логін не пароль))))
          
 
